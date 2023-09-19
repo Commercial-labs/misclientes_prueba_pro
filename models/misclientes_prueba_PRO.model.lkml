@@ -1,6 +1,6 @@
 # Define the database connection to be used for this model.
 # prueba
-connection: "misclientes_bigquery"
+connection: "misclientes_bigquery_pro"
 
 # include all the views
 include: "/views/**/*.view.lkml"
