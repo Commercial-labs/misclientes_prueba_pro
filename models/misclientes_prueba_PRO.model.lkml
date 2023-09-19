@@ -15,7 +15,7 @@ datagroup: tx_datagroup {
 }
 
 explore: tx_eventos {
-  label: "Citas"
+  label: "Citas_PRO"
   persist_with: tx_datagroup
 
   join: centros {
