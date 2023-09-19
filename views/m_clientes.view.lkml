@@ -2,7 +2,7 @@
 view: m_clientes {
   # The  sql_table_name parameter indicates the underlying database table
   # to be used for all fields in this view.
-  sql_table_name: `PoC_Mis_Clientes.M_CLIENTES` ;;
+  sql_table_name: `M_CLIENTES` ;;
   label: "Clientes"
 
   # No primary key is defined for this view. In order to join this view in an Explore,

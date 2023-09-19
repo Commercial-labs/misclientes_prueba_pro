@@ -2,7 +2,7 @@
 view: m_empleados {
   # The sql_table_name parameter indicates the underlying database table
   # to be used for all fields in this view.
-  sql_table_name: `PoC_Mis_Clientes.M_EMPLEADOS` ;;
+  sql_table_name: `M_EMPLEADOS` ;;
   label: "Empleados"
 
   # No primary key is defined for this view. In order to join this view in an Explore,

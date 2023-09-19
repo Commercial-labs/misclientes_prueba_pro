@@ -2,7 +2,7 @@
 view: tx_eventos {
   # The sql_table_name parameter indicates the underlying database table
   # to be used for all fields in this view.
-  sql_table_name: `PoC_Mis_Clientes.TX_EVENTOS` ;;
+  sql_table_name: `TX_EVENTOS` ;;
   label: "Citas"
 
   filter: select_DT {
