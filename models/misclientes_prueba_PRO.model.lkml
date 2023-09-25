@@ -18,10 +18,10 @@ explore: tx_eventos {
   label: "Citas_PRO"
   persist_with: tx_datagroup
 
-  # access_filter: {
-  #   field: centros.des_centro
-  #   user_attribute: brand_name
-  # }
+  access_filter: {
+    field: centros.des_centro
+    user_attribute: brand_name
+  }
 
   join: centros {
     type: left_outer
