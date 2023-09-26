@@ -18,13 +18,20 @@ explore: tx_eventos {
   label: "Citas_PRO"
   persist_with: tx_datagroup
 
+  # Formas de filtrar los datos:
+
+  # sql_always_having:  ;;
+  # sql_always_where:  ;;
+  # always_filter: {}
+  # conditionally_filter: {}
+
   access_filter: {
     field: centros.des_centro
     user_attribute: access_oficina
   }
   # access_filter: {
   #   field: centros.des_dan
-  #   user_attribute: brand_name
+  #   user_attribute: access_dan
   # }
   # access_filter: {
   #   field: centros.des_dc
