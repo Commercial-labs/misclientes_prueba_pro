@@ -33,14 +33,14 @@ explore: tx_eventos {
     field: centros.des_dan
     user_attribute: access_dan
   }
-  # access_filter: {
-  #   field: centros.des_dc
-  #   user_attribute: brand_name
-  # }
-  # access_filter: {
-  #   field: centros.des_dt
-  #   user_attribute: brand_name
-  # }
+  access_filter: {
+    field: centros.des_dc
+    user_attribute: access_dc
+  }
+  access_filter: {
+    field: centros.des_dt
+    user_attribute: access_dt
+  }
 
   join: centros {
     type: left_outer
