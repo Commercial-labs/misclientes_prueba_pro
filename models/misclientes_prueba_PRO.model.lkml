@@ -29,10 +29,10 @@ explore: tx_eventos {
     field: centros.des_centro
     user_attribute: access_oficina
   }
-  # access_filter: {
-  #   field: centros.des_dan
-  #   user_attribute: access_dan
-  # }
+  access_filter: {
+    field: centros.des_dan
+    user_attribute: access_dan
+  }
   # access_filter: {
   #   field: centros.des_dc
   #   user_attribute: brand_name
