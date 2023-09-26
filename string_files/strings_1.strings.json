@@ -1,0 +1,7 @@
+{
+  "flight_info": "Flights",
+  "id": "Identifier",
+  "airline": "Air Carrier",
+  "country_of_departure": "Country of Departure",
+  "number_engines": "Number of Engines"
+}
