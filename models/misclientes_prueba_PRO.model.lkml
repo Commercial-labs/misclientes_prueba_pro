@@ -20,7 +20,7 @@ explore: tx_eventos {
 
   access_filter: {
     field: centros.des_centro
-    user_attribute: brand_name
+    user_attribute: access_oficina
   }
   # access_filter: {
   #   field: centros.des_dan
