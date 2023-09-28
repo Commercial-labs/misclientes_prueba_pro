@@ -47,11 +47,11 @@ explore: tx_eventos {
   #   user_attribute: access_dt
   # }
 
-  join: seg_lateral {
-    type: inner
-    sql_on: 1 =${centros.pk_centro} ;;
-    relationship: many_to_one
-  }
+  # join: seg_lateral {
+  #   type: inner
+  #   sql_on: 1 =${centros.pk_centro} ;;
+  #   relationship: many_to_one
+  # }
 
   join: centros {
     type: left_outer
