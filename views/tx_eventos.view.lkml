@@ -48,11 +48,11 @@ view: tx_eventos {
     suggestions: ["DT", "DC","DAN","Oficina"]
   }
 
-  # dimension: primary_key {
-  #   hidden: yes
-  #   primary_key: yes
-  #   sql: CONCAT(${TABLE}.ID_EVENTO,"-", ${TABLE}.CENTRO,"-", ${TABLE}.EMPLEADO,"-",${TABLE}.NUMPERSO)  ;;
-  # }
+  dimension: primary_key {
+    # hidden: yes
+    primary_key: yes
+    sql: CONCAT(${TABLE}.ID_EVENTO,"-", ${TABLE}.CENTRO,"-", ${TABLE}.EMPLEADO,"-",${TABLE}.NUMPERSO)  ;;
+  }
 
   dimension: canal {
     label: "Canal"
