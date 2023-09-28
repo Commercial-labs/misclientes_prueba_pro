@@ -25,21 +25,32 @@ explore: tx_eventos {
   # always_filter: {}
   # conditionally_filter: {}
 
-  access_filter: {
-    field: centros.des_centro
-    user_attribute: access_oficina
-  }
-  access_filter: {
-    field: centros.des_dan
-    user_attribute: access_dan
-  }
-  access_filter: {
-    field: centros.des_dc
-    user_attribute: access_dc
-  }
-  access_filter: {
-    field: centros.des_dt
-    user_attribute: access_dt
+  # access_filter: {
+  #   field: centros.pk_centro
+  #   user_attribute: centro_empleado
+  # }
+
+  # access_filter: {
+  #   field: centros.des_centro
+  #   user_attribute: access_oficina
+  # }
+  # access_filter: {
+  #   field: centros.des_dan
+  #   user_attribute: access_dan
+  # }
+  # access_filter: {
+  #   field: centros.des_dc
+  #   user_attribute: access_dc
+  # }
+  # access_filter: {
+  #   field: centros.des_dt
+  #   user_attribute: access_dt
+  # }
+
+  join: seg_lateral {
+    type: left_outer
+    sql_on: {{ _user_attributes['centro_empleado'] }}=${centros.pk_centro} ;;
+    relationship: many_to_one
   }
 
   join: centros {
