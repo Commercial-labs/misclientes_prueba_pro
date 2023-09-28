@@ -49,7 +49,7 @@ explore: tx_eventos {
 
   join: seg_lateral {
     type: left_outer
-    sql_on: {{ _user_attributes['centro_empleado'] }}=${centros.pk_centro} ;;
+    sql_on: {{ _user_attributes['centro_empleado'] }} =${centros.pk_centro} ;;
     relationship: many_to_one
   }
 
