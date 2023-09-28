@@ -53,7 +53,6 @@ view: centros {
     label: "Oficina"
     type: string
     sql: CONCAT(${pk_centro}, " - ", ${TABLE}.DES_CENTRO_GES) ;;
-    drill_fields: [oficinas*]
   }
 
   dimension: cod_dan {
@@ -66,7 +65,6 @@ view: centros {
     label: "DAN"
     type: string
     sql: CONCAT(${cod_dan}, " - ", ${TABLE}.DES_DAN) ;;
-    drill_fields: [oficinas*]
   }
 
   dimension: cod_dc {
@@ -79,7 +77,6 @@ view: centros {
     label: "DC"
     type: string
     sql: CONCAT(${cod_dc}, " - ", ${TABLE}.DES_DG) ;;
-    drill_fields: [oficinas*]
   }
 
   dimension: cod_dt {
@@ -92,7 +89,6 @@ view: centros {
     label: "DT"
     type: string
     sql: CONCAT(${cod_dt}, " - ", ${TABLE}.DES_DT) ;;
-    drill_fields: [oficinas*]
   }
 
   dimension: num_emp {
@@ -134,7 +130,5 @@ view: centros {
   measure: count {
     type: count
   }
-
-  set: oficinas {fields:[des_dt,des_dc,des_dan,des_centro]}
 
 }

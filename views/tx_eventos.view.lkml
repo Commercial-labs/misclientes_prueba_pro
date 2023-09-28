@@ -24,11 +24,11 @@ view: tx_eventos {
   #   suggest_dimension: centros.des_dan
   # }
 
-  # filter: select_oficina {
-  #   type: string
-  #   suggest_explore: tx_eventos
-  #   suggest_dimension: centros.des_centro
-  # }
+  filter: select_oficina {
+    type: string
+    suggest_explore: tx_eventos
+    suggest_dimension: centros.des_centro
+  }
 
   filter: select_medida {
     label: "Datos"
