@@ -48,7 +48,7 @@ explore: tx_eventos {
   # }
 
   join: seg_lateral {
-    type: left_outer
+    type: inner
     sql_on: 1 =${centros.pk_centro} ;;
     relationship: many_to_one
   }
