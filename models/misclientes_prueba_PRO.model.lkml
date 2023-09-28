@@ -26,7 +26,7 @@ explore: tx_eventos {
   # conditionally_filter: {}
 
   access_filter: {
-    field: seg_lateral.centro
+    field: seg_lateral.centro_emp
     user_attribute: centro_empleado
   }
 
