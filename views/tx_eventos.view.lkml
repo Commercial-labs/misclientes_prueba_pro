@@ -49,9 +49,10 @@ view: tx_eventos {
   }
 
   dimension: primary_key {
-    # hidden: yes
+    hidden: yes
     primary_key: yes
-    sql: CONCAT(${TABLE}.ID_EVENTO,"-", ${TABLE}.CENTRO,"-", ${TABLE}.EMPLEADO,"-",${TABLE}.NUMPERSO)  ;;
+    sql: CONCAT(CAST(${TABLE}.ID_EVENTO AS TEXT),"-", CAST(${TABLE}.CENTRO AS TEXT),"-", CAST(${TABLE}.EMPLEADO AS TEXT),"-",CAST(${TABLE}.NUMPERSO AS TEXT))  ;;
+
   }
 
   dimension: canal {
