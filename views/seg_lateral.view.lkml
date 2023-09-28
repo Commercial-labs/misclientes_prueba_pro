@@ -11,7 +11,7 @@ view: seg_lateral {
 
   dimension: centro_emp {
     label: "Centro empleado"
-    type: string
+    type: number
     sql: ${TABLE}.CENTRO_EMP ;;
   }
 
@@ -23,7 +23,7 @@ view: seg_lateral {
 
   dimension: centro {
     label: "Centro"
-    type: string
+    type: number
     sql: ${TABLE}.CENTRO ;;
   }
 
