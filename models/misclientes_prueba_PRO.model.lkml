@@ -48,8 +48,8 @@ explore: tx_eventos {
   # }
 
   join: seg_lateral {
-    type: left_outer
-    sql_on: ${seg_lateral.centro} =${centros.pk_centro} ;;
+    type: inner
+    sql_on: ${seg_lateral.centro} = ${centros.pk_centro} ;;
     relationship: many_to_one
   }
 
