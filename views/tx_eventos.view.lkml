@@ -51,7 +51,7 @@ view: tx_eventos {
   dimension: primary_key {
     hidden: yes
     primary_key: yes
-    sql: CONCAT(CAST(${TABLE}.ID_EVENTO AS TEXT),"-", CAST(${TABLE}.CENTRO AS TEXT),"-", CAST(${TABLE}.EMPLEADO AS TEXT),"-",CAST(${TABLE}.NUMPERSO AS TEXT))  ;;
+    sql: CONCAT(CAST(${TABLE}.ID_EVENTO AS STRING),"-", CAST(${TABLE}.CENTRO AS STRING),"-", CAST(${TABLE}.EMPLEADO AS STRING),"-",CAST(${TABLE}.NUMPERSO AS STRING))  ;;
 
   }
 
