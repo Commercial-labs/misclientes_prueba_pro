@@ -54,7 +54,7 @@ explore: tx_eventos {
   }
 
   join: centros {
-    type: left_outer
+    type: inner
     sql_on: ${tx_eventos.centro}=${centros.pk_centro} ;;
     relationship: many_to_one
   }
