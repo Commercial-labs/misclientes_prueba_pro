@@ -5,31 +5,6 @@ view: tx_eventos {
   sql_table_name: `TX_EVENTOS` ;;
   label: "Citas"
 
-  # filter: select_DT {
-  #   type: string
-  #   suggest_explore: tx_eventos
-  #   suggest_dimension: centros.des_dt
-  #   default_value: "9000 - OFICINES VIRTUALS"
-  # }
-
-  # filter: select_DC {
-  #   type: string
-  #   suggest_explore: tx_eventos
-  #   suggest_dimension: centros.des_dc
-  # }
-
-  # filter: select_DAN {
-  #   type: string
-  #   suggest_explore: tx_eventos
-  #   suggest_dimension: centros.des_dan
-  # }
-
-  filter: select_oficina {
-    type: string
-    suggest_explore: tx_eventos
-    suggest_dimension: centros.des_centro
-  }
-
   filter: select_medida {
     label: "Datos"
     type: string
