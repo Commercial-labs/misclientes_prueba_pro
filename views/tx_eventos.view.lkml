@@ -48,11 +48,11 @@ view: tx_eventos {
     suggestions: ["DT", "DC","DAN","Oficina"]
   }
 
-  # dimension: primary_key {
-  #   hidden: yes
-  #   primary_key: yes
-  #   sql: CONCAT(to_char(${TABLE}.ID_EVENTO),"-", to_char(${TABLE}.CENTRO),"-", to_char(${TABLE}.EMPLEADO),"-",to_char(${TABLE}.NUMPERSO))  ;;
-  # }
+  dimension: primary_key {
+    hidden: yes
+    primary_key: yes
+    sql: CONCAT(to_char(${TABLE}.ID_EVENTO),"-", to_char(${TABLE}.CENTRO),"-", to_char(${TABLE}.EMPLEADO),"-",to_char(${TABLE}.NUMPERSO))  ;;
+  }
 
   dimension: canal {
     label: "Canal"
@@ -122,7 +122,7 @@ view: tx_eventos {
   }
 
   dimension: id_evento {
-    primary_key: yes
+    # primary_key: yes
     label: "Identificador evento"
     type: number
     sql: ${TABLE}.ID_EVENTO ;;
