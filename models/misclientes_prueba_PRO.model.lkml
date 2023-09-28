@@ -25,10 +25,10 @@ explore: tx_eventos {
   # always_filter: {}
   # conditionally_filter: {}
 
-  access_filter: {
-    field: seg_lateral.centro_emp
-    user_attribute: centro_empleado
-  }
+  # access_filter: {
+  #   field: seg_lateral.centro_emp
+  #   user_attribute: centro_empleado
+  # }
 
   # access_filter: {
   #   field: centros.des_centro
