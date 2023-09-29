@@ -50,27 +50,27 @@ explore: tx_eventos {
   #   user_attribute: access_dt
   # }
 
+  # join: seg_lateral {
+  #   type: inner
+  #   sql_on:  ${tx_eventos.centro} = ${seg_lateral.centro} ;;
+  #   relationship: many_to_many
+  # }
+
+  # join: seg_lateral {
+  #   type: inner
+  #   sql_on: {% condition ${seg_lateral.nivel_centro} == "DT" %}
+  #             ${centros.cod_dt}
+  #           {% endcondition %} = ${seg_lateral.centro} ;;
+  #   relationship: many_to_many
+  # }
+
   join: seg_lateral {
     type: inner
-    sql_on:  ${tx_eventos.centro} = ${seg_lateral.centro} ;;
+    sql_on: {% condition _seg_lateral._nivel_centro == "DT" %}
+              ${centros.cod_dt}
+            {% endcondition %} = ${seg_lateral.centro} ;;
     relationship: many_to_many
   }
-
-  # join: seg_lateral {
-  #   type: inner
-  #   sql_on: {% condition ${seg_lateral.rol} == "DT" %}
-  #             ${centros.cod_dt}
-  #           {% endcondition %} = ${seg_lateral.centro} ;;
-  #   relationship: many_to_many
-  # }
-
-  # join: seg_lateral {
-  #   type: inner
-  #   sql_on: {% condition _seg_lateral._rol == "DT" %}
-  #             ${centros.cod_dt}
-  #           {% endcondition %} = ${seg_lateral.centro} ;;
-  #   relationship: many_to_many
-  # }
 
   # {% if f._sql == 'sql' %}
   # {% if ${f} == 'sql' %}
