@@ -50,11 +50,11 @@ explore: tx_eventos {
   #   user_attribute: access_dt
   # }
 
-  # join: seg_lateral {
-  #   type: inner
-  #   sql_on:  ${tx_eventos.centro} = ${seg_lateral.centro} ;;
-  #   relationship: many_to_many
-  # }
+  join: seg_lateral {
+    type: inner
+    sql_on:  ${tx_eventos.centro} = ${seg_lateral.centro} ;;
+    relationship: many_to_many
+  }
 
   # join: seg_lateral {
   #   type: inner
@@ -64,13 +64,13 @@ explore: tx_eventos {
   #   relationship: many_to_many
   # }
 
-  join: seg_lateral {
-    type: inner
-    sql_on: {% if seg_lateral._rol == "DT" %}
-              ${centros.cod_dt}
-            {% endif %} = ${seg_lateral.centro} ;;
-    relationship: many_to_many
-  }
+  # join: seg_lateral {
+  #   type: inner
+  #   sql_on: {% if seg_lateral._nivel_centro == "DC" %}
+  #             ${centros.cod_dc}
+  #           {% endif %} = ${seg_lateral.centro} ;;
+  #   relationship: many_to_many
+  # }
 
   # {% if f._sql == 'sql' %}
   # {% if ${f} == 'sql' %}
