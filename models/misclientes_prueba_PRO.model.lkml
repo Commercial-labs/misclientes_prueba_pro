@@ -23,7 +23,7 @@ explore: tx_eventos {
   # sql_always_having:  ;;
 
   # SUBSTR({{ _user_attributes['centro_empleado'] }}, STRPOS({{ _user_attributes['centro_empleado'] }}, '-'))
-  sql_always_where: {{ _user_attributes['centro_empleado'] }} = ${seg_lateral.centro_emp} ;;
+  # sql_always_where: {{ _user_attributes['centro_empleado'] }} = ${seg_lateral.centro_emp} ;;
 
   # always_filter: {}
   # conditionally_filter: {}
