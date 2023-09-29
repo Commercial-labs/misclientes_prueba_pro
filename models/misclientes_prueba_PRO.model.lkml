@@ -21,6 +21,7 @@ explore: tx_eventos {
   # Formas de filtrar los datos:
 
   # sql_always_having:  ;;
+  # SUBSTR({{ _user_attributes['centro_empleado'] }}, STRPOS({{ _user_attributes['centro_empleado'] }}, '-'))
   sql_always_where: {{ _user_attributes['centro_empleado'] }} = ${centros.cod_dt} ;;
   # always_filter: {}
   # conditionally_filter: {}
