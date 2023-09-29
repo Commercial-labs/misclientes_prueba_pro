@@ -49,11 +49,17 @@ explore: tx_eventos {
 
   join: seg_lateral {
     type: inner
-    sql_on: {% if seg_lateral.rol._is_filtered == "DT" %}
-              ${centros.cod_dt}
-            {% endif %} = ${seg_lateral.centro} ;;
+    sql_on:  ${tx_eventos.centro} = ${seg_lateral.centro} ;;
     relationship: many_to_many
   }
+
+  # join: seg_lateral {
+  #   type: inner
+  #   sql_on: {% condition ${seg_lateral.rol} == "DT" %}
+  #             ${centros.cod_dt}
+  #           {% endcondition %} = ${seg_lateral.centro} ;;
+  #   relationship: many_to_many
+  # }
 
   # {% if f._sql == 'sql' %}
   # {% if ${f} == 'sql' %}
