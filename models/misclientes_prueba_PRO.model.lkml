@@ -23,15 +23,15 @@ explore: tx_eventos {
   # sql_always_having:  ;;
 
   # SUBSTR({{ _user_attributes['centro_empleado'] }}, STRPOS({{ _user_attributes['centro_empleado'] }}, '-'))
-  # sql_always_where: {{ _user_attributes['centro_empleado'] }} = ${seg_lateral.centro_emp} ;;
+  sql_always_where: CAST(SUBSTR({{ _user_attributes['centro_empleado'] }}, STRPOS({{ _user_attributes['centro_empleado'] }}, '-')) AS INT64) = ${seg_lateral.centro_emp} ;;
 
   # always_filter: {}
   # conditionally_filter: {}
 
-  access_filter: {
-    field: seg_lateral.centro_emp
-    user_attribute: centro_empleado
-  }
+  # access_filter: {
+  #   field: seg_lateral.centro_emp
+  #   user_attribute: centro_empleado
+  # }
 
   # access_filter: {
   #   field: centros.des_centro
@@ -50,19 +50,19 @@ explore: tx_eventos {
   #   user_attribute: access_dt
   # }
 
-  join: seg_lateral {
-    type: inner
-    sql_on:  ${tx_eventos.centro} = ${seg_lateral.centro} ;;
-    relationship: many_to_many
-  }
-
   # join: seg_lateral {
   #   type: inner
-  #   sql_on: {% condition ${seg_lateral.nivel_centro} == "DT" %}
-  #             ${centros.cod_dt}
-  #           {% endcondition %} = ${seg_lateral.centro} ;;
+  #   sql_on:  ${tx_eventos.centro} = ${seg_lateral.centro} ;;
   #   relationship: many_to_many
   # }
+
+  join: seg_lateral {
+    type: inner
+    sql_on: {% condition SUBSTR({{ _user_attributes['centro_empleado'] }}, 1, STRPOS({{ _user_attributes['centro_empleado'] }}, '-')) == "DT" %}
+              ${centros.cod_dt}
+            {% endcondition %} = ${seg_lateral.centro} ;;
+    relationship: many_to_many
+  }
 
   # join: seg_lateral {
   #   type: inner
