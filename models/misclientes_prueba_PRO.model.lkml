@@ -60,6 +60,8 @@ explore: tx_eventos {
     type: inner
     sql_on: {% if _user_attributes['tipo_centro_empleado'] == 'DT' %}
               ${centros.cod_dc}
+            {% elsif _user_attributes['tipo_centro_empleado'] == 'DC' %}
+              ${centros.cod_dan}
             {% else %}
               ${tx_eventos.centro}
             {% endif %}
