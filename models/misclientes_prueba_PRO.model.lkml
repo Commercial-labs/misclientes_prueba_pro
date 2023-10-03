@@ -50,7 +50,7 @@ explore: tx_eventos {
 
   join: seg_lateral {
     type: inner
-    sql_on: {% if _user_attributes['tipo_centro_empleado'] == 'DT' and _explore_name._nivel_centro == 'DC' %}
+    sql_on: {% if _user_attributes['tipo_centro_empleado'] == 'DT' and  _explore._name._nivel_centro == 'DC' %}
               ${centros.cod_dc}
             {% elsif _user_attributes['tipo_centro_empleado'] == 'DC' %}
               ${centros.cod_dan}
