@@ -58,9 +58,9 @@ explore: tx_eventos {
 
   join: seg_lateral {
     type: inner
-    sql_on: {% if _user_attributes['tipo_centro_empleado'] == "DT" %}
+    sql_on: {% condition _user_attributes['tipo_centro_empleado'] == "DT" %}
               ${tx_eventos.centro}
-            {% endif %} = ${seg_lateral.centro} ;;
+            {% endcondition %} = ${seg_lateral.centro} ;;
     relationship: many_to_many
   }
 
