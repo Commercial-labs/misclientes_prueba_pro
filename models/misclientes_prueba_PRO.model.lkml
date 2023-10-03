@@ -33,20 +33,20 @@ explore: tx_eventos {
     user_attribute: centro_empleado
   }
 
-  join: seg_lateral_v2 {
-    type: inner
-    sql_on: {% if _user_attributes['tipo_centro_empleado'] == 'DT' %}
-              ${centros.cod_dt}
-            {% elsif _user_attributes['tipo_centro_empleado'] == 'DC' %}
-              ${centros.cod_dc}
-            {% elsif _user_attributes['tipo_centro_empleado'] == 'DAN' %}
-              ${centros.cod_dan}
-            {% else %}
-              ${tx_eventos.centro}
-            {% endif %}
-            = ${seg_lateral_v2.centro};;
-    relationship: many_to_many
-  }
+  # join: seg_lateral_v2 {
+  #   type: inner
+  #   sql_on: {% if _user_attributes['tipo_centro_empleado'] == 'DT' %}
+  #             ${centros.cod_dt}
+  #           {% elsif _user_attributes['tipo_centro_empleado'] == 'DC' %}
+  #             ${centros.cod_dc}
+  #           {% elsif _user_attributes['tipo_centro_empleado'] == 'DAN' %}
+  #             ${centros.cod_dan}
+  #           {% else %}
+  #             ${tx_eventos.centro}
+  #           {% endif %}
+  #           = ${seg_lateral_v2.centro};;
+  #   relationship: many_to_many
+  # }
 
   join: seg_lateral {
     type: inner
