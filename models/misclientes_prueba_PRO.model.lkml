@@ -51,13 +51,17 @@ explore: tx_eventos {
   join: seg_lateral {
     type: inner
     # sql_on: {% if _user_attributes['tipo_centro_empleado'] == 'DT' and  _view._name.nivel_centro == 'DC' %}
-    sql_on: {% if _user_attributes['tipo_centro_empleado'] == 'DT' %}
-              ${centros.cod_dc}
-            {% elsif _user_attributes['tipo_centro_empleado'] == 'DC' %}
-              ${centros.cod_dan}
-            {% else %}
-              ${tx_eventos.centro}
-            {% endif %}
+    sql_on:
+            {% case _user_attributes['tipo_centro_empleado'] %}
+              {% when 'DT' %}
+                ${centros.cod_dc}
+              {% when 'DC' %}
+                ${centros.cod_dan}
+              {% when 'DAN' %}
+                ${tx_eventos.centro}
+              {% else %}
+                ${tx_eventos.centro}
+            {% endcase %}
             = ${seg_lateral.centro} ;;
     relationship: many_to_many
   }
