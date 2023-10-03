@@ -33,23 +33,6 @@ explore: tx_eventos {
     user_attribute: centro_empleado
   }
 
-  # access_filter: {
-  #   field: centros.des_centro
-  #   user_attribute: access_oficina
-  # }
-  # access_filter: {
-  #   field: centros.des_dan
-  #   user_attribute: access_dan
-  # }
-  # access_filter: {
-  #   field: centros.des_dc
-  #   user_attribute: access_dc
-  # }
-  # access_filter: {
-  #   field: centros.des_dt
-  #   user_attribute: access_dt
-  # }
-
   # join: seg_lateral {
   #   type: inner
   #   sql_on:  ${tx_eventos.centro} = ${seg_lateral.centro} ;;
@@ -68,18 +51,6 @@ explore: tx_eventos {
             = ${seg_lateral.centro} ;;
     relationship: many_to_many
   }
-
-  # join: seg_lateral {
-  #   type: inner
-  #   sql_on: {% if seg_lateral._nivel_centro == "DC" %}
-  #             ${centros.cod_dc}
-  #           {% endif %} = ${seg_lateral.centro} ;;
-  #   relationship: many_to_many
-  # }
-
-  # {% if f._sql == 'sql' %}
-  # {% if ${f} == 'sql' %}
-
 
   join: centros {
     type: inner
