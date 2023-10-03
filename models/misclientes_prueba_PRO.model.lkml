@@ -50,22 +50,22 @@ explore: tx_eventos {
   #   user_attribute: access_dt
   # }
 
-  join: seg_lateral {
-    type: inner
-    sql_on:  ${tx_eventos.centro} = ${seg_lateral.centro} ;;
-    relationship: many_to_many
-  }
+  # join: seg_lateral {
+  #   type: inner
+  #   sql_on:  ${tx_eventos.centro} = ${seg_lateral.centro} ;;
+  #   relationship: many_to_many
+  # }
 
   # {{ "Liquid" | slice: 2, 5 }}
   # assign first_posts = site.posts | slice:0, 6
 
-  # join: seg_lateral {
-  #   type: inner
-  #   sql_on: {% if _user_attributes['centro_empleado'] | slice: 1, 2 == "DT" %}
-  #             ${centros.cod_dt}
-  #           {% endif %} = ${seg_lateral.centro} ;;
-  #   relationship: many_to_many
-  # }
+  join: seg_lateral {
+    type: inner
+    sql_on: {% if _user_attributes['tipo_centro_empleado'] == "DT" %}
+              ${centros.cod_dt}
+            {% endif %} = ${seg_lateral.centro} ;;
+    relationship: many_to_many
+  }
 
   # join: seg_lateral {
   #   type: inner
