@@ -33,9 +33,16 @@ explore: tx_eventos {
     user_attribute: centro_empleado
   }
 
-  # join: seg_lateral {
+  # join: seg_lateral_v2 {
   #   type: inner
-  #   sql_on:  ${tx_eventos.centro} = ${seg_lateral.centro} ;;
+  #   sql_on: {% if _user_attributes['tipo_centro_empleado'] == 'DT' %}
+  #             ${centros.cod_dc}
+  #           {% elsif _user_attributes['tipo_centro_empleado'] == 'DC' %}
+  #             ${centros.cod_dan}
+  #           {% else %}
+  #             ${tx_eventos.centro}
+  #           {% endif %}
+  #           = ${seg_lateral.centro} ;;
   #   relationship: many_to_many
   # }
 
