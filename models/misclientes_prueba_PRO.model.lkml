@@ -34,18 +34,17 @@ explore: tx_eventos {
   }
 
   # join: seg_lateral_v2 {
-  #   type: inner
+  #   from: seg_lateral
   #   sql_on: {% if _user_attributes['tipo_centro_empleado'] == 'DT' %}
-  #             ${centros.cod_dt}
-  #           {% elsif _user_attributes['tipo_centro_empleado'] == 'DC' %}
-  #             ${centros.cod_dc}
-  #           {% elsif _user_attributes['tipo_centro_empleado'] == 'DAN' %}
-  #             ${centros.cod_dan}
-  #           {% else %}
-  #             ${tx_eventos.centro}
-  #           {% endif %}
-  #           = ${seg_lateral_v2.centro};;
-  #   relationship: many_to_many
+  #               ${centros.cod_dt}
+  #             {% elsif _user_attributes['tipo_centro_empleado'] == 'DC' %}
+  #               ${centros.cod_dc}
+  #             {% elsif _user_attributes['tipo_centro_empleado'] == 'DAN' %}
+  #               ${centros.cod_dan}
+  #             {% else %}
+  #               ${tx_eventos.centro}
+  #             {% endif %}
+  #             = ${seg_lateral.centro};;
   # }
 
   join: seg_lateral {
@@ -54,11 +53,11 @@ explore: tx_eventos {
     sql_on:
             {% case _user_attributes['tipo_centro_empleado'] %}
               {% when 'DT' %}
-                ${centros.cod_dc}
+                ${centros.cod_dt}
               {% when 'DC' %}
-                ${centros.cod_dan}
+                ${centros.cod_dc}
               {% when 'DAN' %}
-                ${tx_eventos.centro}
+                ${centros.cod_dan}
               {% else %}
                 ${tx_eventos.centro}
             {% endcase %}
