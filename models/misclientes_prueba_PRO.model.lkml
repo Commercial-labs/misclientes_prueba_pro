@@ -61,7 +61,7 @@ explore: tx_eventos {
     sql_on: {% if _user_attributes['tipo_centro_empleado'] == "DT" %}
               ${centros.cod_dc}
             {% else %}
-              ${centros.cod_dc}
+              ${centros.pk_centro}
             {% endif %}
             = ${seg_lateral.centro} ;;
     relationship: many_to_many
