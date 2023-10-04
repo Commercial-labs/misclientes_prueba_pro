@@ -18,6 +18,7 @@ explore: tx_eventos {
   label: "Citas_PRO"
   persist_with: tx_datagroup
 
+
   # Formas de filtrar los datos:
 
   # sql_always_having:  ;;
@@ -33,7 +34,7 @@ explore: tx_eventos {
     user_attribute: centro_empleado
   }
 
-  # join: seg_lateral_v2 {
+  # join: seg_lateral_oficina {
   #   from: seg_lateral
   #   sql_on: {% if _user_attributes['tipo_centro_empleado'] == 'DT' %}
   #               ${centros.cod_dt}
@@ -50,8 +51,9 @@ explore: tx_eventos {
   join: seg_lateral {
     type: inner
     # sql_on: {% if _user_attributes['tipo_centro_empleado'] == 'DT' and  _view._name.nivel_centro == 'DC' %}
+
     sql_on:
-            {% case _user_attributes['tipo_centro_empleado'] %}
+            {% case _user_attributes['tipo_centro_empleado']%}
               {% when 'DT' %}
                 ${centros.cod_dt}
               {% when 'DC' %}
