@@ -5,6 +5,8 @@ datagroup: tm_centros_datagroup {
 
 # The name of this view in Looker is "Centros"
 view: centros {
+  fields_hidden_by_default: yes
+
   # The sql_table_name parameter indicates the underlying database table
   # to be used for all fields in this view.
   label: "Centros"
