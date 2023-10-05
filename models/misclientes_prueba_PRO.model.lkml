@@ -44,10 +44,10 @@ explore: tx_eventos {
   #   user_attribute: centro_empleado
   # }
 
-  access_filter: {
-    field: m_dt.centro_emp
-    user_attribute: centro_empleado
-  }
+  # access_filter: {
+  #   field: m_dt.centro_emp
+  #   user_attribute: centro_empleado
+  # }
 
 
   # join: seg_lateral_oficina {
