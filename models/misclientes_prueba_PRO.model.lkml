@@ -39,6 +39,8 @@ explore: tx_eventos {
     user_attribute: centro_empleado
   }
 
+  # sql_always_where:  ;;
+
   # access_filter: {
   #   field: m_dc.centro_emp
   #   user_attribute: centro_empleado
