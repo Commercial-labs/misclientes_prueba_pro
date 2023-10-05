@@ -35,7 +35,7 @@ explore: tx_eventos {
   # }
 
   access_filter: {
-    field: m_dan.cod_dan
+    field: m_dan.centro_emp
     user_attribute: centro_empleado
   }
 
