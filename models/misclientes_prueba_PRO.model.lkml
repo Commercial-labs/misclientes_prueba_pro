@@ -55,16 +55,42 @@ explore: tx_eventos {
     sql_on:
             {% case _user_attributes['tipo_centro_empleado']%}
               {% when 'DT' %}
-                ${centros.cod_dt}
+                ${m_dt.cod_dt}
               {% when 'DC' %}
-                ${centros.cod_dc}
+                ${m_dc.cod_dc}
               {% when 'DAN' %}
-                ${centros.cod_dan}
+                ${m_dan.cod_dan}
+              {% when 'Oficina' %}
+                ${m_oficina.cod_oficina}
               {% else %}
                 ${tx_eventos.centro}
             {% endcase %}
             = ${seg_lateral.centro} ;;
     relationship: many_to_many
+  }
+
+  join: m_dt {
+    type: inner
+    sql_on: ${tx_eventos.cod_dt}=${m_dt.cod_dt} ;;
+    relationship: many_to_one
+  }
+
+  join: m_dc {
+    type: inner
+    sql_on: ${tx_eventos.cod_dc}=${m_dc.cod_dc} ;;
+    relationship: many_to_one
+  }
+
+  join: m_dan {
+    type: inner
+    sql_on: ${tx_eventos.cod_dan}=${m_dan.cod_dan} ;;
+    relationship: many_to_one
+  }
+
+  join: m_oficina {
+    type: inner
+    sql_on: ${tx_eventos.centro}=${m_oficina.cod_oficina} ;;
+    relationship: many_to_one
   }
 
   join: centros {
