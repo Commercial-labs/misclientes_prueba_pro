@@ -29,10 +29,10 @@ explore: tx_eventos {
   # always_filter: {}
   # conditionally_filter: {}
 
-  access_filter: {
-    field: m_oficina.centro_emp
-    user_attribute: centro_empleado
-  }
+  # access_filter: {
+  #   field: m_oficina.centro_emp
+  #   user_attribute: centro_empleado
+  # }
 
   access_filter: {
     field: m_dan.centro_emp
