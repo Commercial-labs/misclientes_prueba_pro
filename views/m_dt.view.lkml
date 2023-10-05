@@ -1,6 +1,6 @@
 view: m_dt {
 
-  sql_table_name: `CENTROS` ;;
+  sql_table_name: `CENTROS_JER` ;;
   label: "Maestro DTs"
 
   dimension: cod_dt {

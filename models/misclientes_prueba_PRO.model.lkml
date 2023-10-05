@@ -29,10 +29,26 @@ explore: tx_eventos {
   # always_filter: {}
   # conditionally_filter: {}
 
-  access_filter: {
-    field: seg_lateral.centro_emp
-    user_attribute: centro_empleado
-  }
+  # access_filter: {
+  #   field: seg_lateral_oficina.centro_emp
+  #   user_attribute: centro_empleado
+  # }
+
+  # access_filter: {
+  #   field: seg_lateral_dan.centro_emp
+  #   user_attribute: centro_empleado
+  # }
+
+  # access_filter: {
+  #   field: seg_lateral_dc.centro_emp
+  #   user_attribute: centro_empleado
+  # }
+
+  # access_filter: {
+  #   field: seg_lateral_dt.centro_emp
+  #   user_attribute: centro_empleado
+  # }
+
 
   # join: seg_lateral_oficina {
   #   from: seg_lateral
@@ -48,26 +64,26 @@ explore: tx_eventos {
   #             = ${seg_lateral.centro};;
   # }
 
-  join: seg_lateral {
-    type: inner
-    # sql_on: {% if _user_attributes['tipo_centro_empleado'] == 'DT' and  _view._name.nivel_centro == 'DC' %}
+  # join: seg_lateral {
+  #   type: inner
+  #   # sql_on: {% if _user_attributes['tipo_centro_empleado'] == 'DT' and  _view._name.nivel_centro == 'DC' %}
 
-    sql_on:
-            {% case _user_attributes['tipo_centro_empleado']%}
-              {% when 'DT' %}
-                ${m_dt.cod_dt}
-              {% when 'DC' %}
-                ${m_dc.cod_dc}
-              {% when 'DAN' %}
-                ${m_dan.cod_dan}
-              {% when 'Oficina' %}
-                ${m_oficina.cod_oficina}
-              {% else %}
-                ${tx_eventos.centro}
-            {% endcase %}
-            = ${seg_lateral.centro} ;;
-    relationship: many_to_many
-  }
+  #   sql_on:
+  #           {% case _user_attributes['tipo_centro_empleado']%}
+  #             {% when 'DT' %}
+  #               ${m_dt.cod_dt}
+  #             {% when 'DC' %}
+  #               ${m_dc.cod_dc}
+  #             {% when 'DAN' %}
+  #               ${m_dan.cod_dan}
+  #             {% when 'Oficina' %}
+  #               ${m_oficina.cod_oficina}
+  #             {% else %}
+  #               ${tx_eventos.centro}
+  #           {% endcase %}
+  #           = ${seg_lateral.centro} ;;
+  #   relationship: many_to_many
+  # }
 
   join: m_dt {
     type: inner
