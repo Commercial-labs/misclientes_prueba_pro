@@ -1,6 +1,6 @@
 view: m_dc {
 
-  sql_table_name: 'CENTROS' ;;
+  sql_table_name: `CENTROS` ;;
   label: "Maestro DCs"
 
   dimension: cod_dc {

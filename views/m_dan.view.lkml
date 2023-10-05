@@ -1,6 +1,6 @@
 view: m_dan {
 
-  sql_table_name: 'CENTROS' ;;
+  sql_table_name: `CENTROS` ;;
   label: "Maestro DANs"
 
   dimension: cod_dan {

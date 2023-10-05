@@ -1,6 +1,6 @@
 view: m_oficina {
 
-  sql_table_name: 'CENTROS' ;;
+  sql_table_name: `CENTROS` ;;
   label: "Maestro Oficinas"
 
   dimension: cod_oficina {
