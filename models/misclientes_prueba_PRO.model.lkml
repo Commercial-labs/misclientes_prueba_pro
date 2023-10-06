@@ -100,7 +100,7 @@ explore: tx_eventos {
   }
 
   join: m_dan {
-    type: left_outer
+    type: inner
     sql_on: ${tx_eventos.cod_dan}=${m_dan.cod_dan} ;;
     relationship: many_to_one
   }
