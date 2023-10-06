@@ -208,20 +208,20 @@ view: tx_eventos {
       WHEN {% condition select_drill %}
         "DT"
         {% endcondition %}
-      THEN  ${centros.des_dt}
+      THEN  ${cod_dt}
       WHEN {% condition select_drill %}
         "DC"
         {% endcondition %}
-      THEN  ${centros.des_dc}
+      THEN  ${cod_dc}
       WHEN {% condition select_drill %}
         "DAN"
       {% endcondition %}
-      THEN ${centros.des_dan}
+      THEN ${cod_dan}
       WHEN {% condition select_drill %}
         "Oficina"
       {% endcondition %}
-      THEN ${centros.des_centro}
-      ELSE ${centros.des_dt}
+      THEN ${centro}
+      ELSE ${cod_dt}
     END;;
   }
 
