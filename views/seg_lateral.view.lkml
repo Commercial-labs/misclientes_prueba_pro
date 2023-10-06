@@ -1,4 +1,5 @@
 view: seg_lateral {
+  fields_hidden_by_default: yes
   sql_table_name: `SEG_LATERAL` ;;
   label: "Seguridad lateral"
 

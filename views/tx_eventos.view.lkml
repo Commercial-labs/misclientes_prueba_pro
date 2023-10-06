@@ -60,6 +60,12 @@ view: tx_eventos {
     sql: ${TABLE}.COD_DAN ;;
   }
 
+  dimension: des_dt {
+    label: "DES_DAN"
+    type: string
+    sql:  ;;
+  }
+
 
   dimension: empleado {
     label: "Identificador Empleado"
