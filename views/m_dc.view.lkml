@@ -5,7 +5,7 @@ view: m_dc {
   label: "Maestro DCs"
 
   dimension: cod_dc {
-    # primary_key: yes
+    primary_key: yes
     label: "Código DC"
     type: number
     sql: ${TABLE}.COD_DC ;;

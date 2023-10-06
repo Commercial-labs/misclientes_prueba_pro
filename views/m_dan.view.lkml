@@ -5,7 +5,7 @@ view: m_dan {
   label: "Maestro DANs"
 
   dimension: cod_dan {
-    # primary_key: yes
+    primary_key: yes
     label: "Código DAN"
     type: number
     sql: ${TABLE}.COD_DAN ;;
