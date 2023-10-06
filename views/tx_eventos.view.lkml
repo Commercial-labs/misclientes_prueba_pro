@@ -42,25 +42,6 @@ view: tx_eventos {
     sql: ${TABLE}.CENTRO ;;
   }
 
-  dimension: cod_dt {
-    label: "COD_DT"
-    type: number
-    sql: ${TABLE}.COD_DT ;;
-  }
-
-  dimension: cod_dc {
-    label: "COD_DC"
-    type: number
-    sql: ${TABLE}.COD_DG ;;
-  }
-
-  dimension: cod_dan {
-    label: "COD_DAN"
-    type: number
-    sql: ${TABLE}.COD_DAN ;;
-  }
-
-
   dimension: empleado {
     label: "Identificador Empleado"
     type: number
