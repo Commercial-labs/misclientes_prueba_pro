@@ -6,6 +6,9 @@ connection: "misclientes_bigquery_pro"
 # include all the views
 include: "/views/**/*.view.lkml"
 
+# include all the tests
+include: "/tests/**/*.lkml"
+
 # Datagroups define a caching policy for an Explore. To learn more,
 # use the Quick Help panel on the right to see documentation.
 # Hello world
