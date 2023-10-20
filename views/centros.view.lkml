@@ -1,6 +1,6 @@
 datagroup: tm_centros_datagroup {
   max_cache_age: "24 hours"
-  sql_trigger: SELECT max(COD_DT) FROM CENTROS ;;
+  sql_trigger: SELECT max(PK_CENTRO) FROM CENTROS ;;
 }
 
 # The name of this view in Looker is "Centros"
