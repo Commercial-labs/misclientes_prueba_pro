@@ -3,7 +3,7 @@ include: "/views/centros_2.view"
 
 view: centros {
 
-  extends: [centros_1, centros_2]
+  extends: [centros_1]
 
   dimension: pk_centro {
     primary_key: yes
